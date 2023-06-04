@@ -13,6 +13,9 @@ app.get("/", (req, res) => {
 app.get("/get-transactions", Transactions);
 app.get("/transactionDetails/:id", transactionDetails);
 
+app.get('*', (req, res) => {
+    res.send('Invalid Route')
+})
 app.listen(port, () => {
     console.log(`App is listening on port ${port}`);
 });
